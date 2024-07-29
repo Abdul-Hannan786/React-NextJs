@@ -1,21 +1,9 @@
-function Home(){
-  return(
-    <div>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-    </div>
-  ) 
-}
+"use client";
 
-export default Home
+export default function Home() {
+  return (
+    <>
+      <h1>Hello World</h1>
+    </>
+  );
+}

@@ -11,7 +11,7 @@ const Post = ({ posts }: PostLikeType) => {
     <>
     {
         posts?.map(({ content, likes }, i) => (
-            <div style={{fontFamily: "sans-serif"}} key={i}>
+            <div style={{fontFamily: "sans-serif"}} key={content + i}>
               <p>
                 <strong>Content: </strong> {content}
               </p>
