@@ -10,7 +10,7 @@ const Hobbies = ({hobbies}: HobbiesType) => {
    <ul style={{fontFamily: "sans-serif"}}>
     {
         hobbies?.map((hobby, i) => (
-            <li>{hobby}</li>
+            <li key={hobby + i}>{hobby}</li>
         ))
     }
    </ul>
