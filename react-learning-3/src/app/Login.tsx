@@ -68,27 +68,9 @@ const Login = ({ changeAuthStatus, setUser }: LoginType) => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "75vh",
-        width: "100%",
-        fontFamily: "sans-serif",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          boxShadow: "0 0 5px gray",
-          borderRadius: "20px",
-          padding: "4%"
-        }}
-      >
+    <>
+      <label htmlFor="email">
+        Email:
         <input
           type="email"
           id="email"
@@ -97,15 +79,12 @@ const Login = ({ changeAuthStatus, setUser }: LoginType) => {
           onChange={(event) => {
             setEmail(event.target.value);
           }}
-          style={{
-            padding: "10px",
-            borderRadius: "6px",
-            border: "1px solid lightgray",
-          }}
         />
+      </label>
 
-        <br />
-
+      <br />
+      <label htmlFor="password">
+        Password:
         <input
           type="password"
           id="password"
@@ -114,31 +93,13 @@ const Login = ({ changeAuthStatus, setUser }: LoginType) => {
           onChange={(event) => {
             setPassword(event.target.value);
           }}
-          style={{
-            padding: "10px",
-            borderRadius: "6px",
-            border: "1px solid lightgray",
-            hover: ""
-          }}
         />
+      </label>
 
-        <br />
+      <br />
 
-        <button
-          style={{
-            padding: "9px",
-            width: "100%",
-            borderRadius: "6px",
-            border: "0",
-            backgroundColor: "#1976d2",
-            color: "white"
-          }}
-          onClick={loginHandler}
-        >
-          Login
-        </button>
-      </div>
-    </div>
+      <button onClick={loginHandler}>Login</button>
+    </>
   );
 };
 

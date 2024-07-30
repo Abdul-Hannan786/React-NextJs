@@ -15,7 +15,8 @@ type UserTimelineType = {
 const UserTimeLine = ({userData}: UserTimelineType) => {
   return (
     <>
-    
+    <Greet username={userData?.username}/>
+
     <Hobbies
     hobbies={userData?.hobbies}
     />
