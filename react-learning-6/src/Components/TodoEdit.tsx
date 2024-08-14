@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 type TodoEditType = {
+  editedTodo: string;
   saveEditedTodo: (updatedTodo: string) => void;
-  editedTodo: string
 };
 
-const TodoEdit = ({ saveEditedTodo, editedTodo }: TodoEditType) => {
+const TodoEdit = ({ editedTodo, saveEditedTodo }: TodoEditType) => {
   const [editTodo, setEditTodo] = useState(editedTodo);
 
   return (

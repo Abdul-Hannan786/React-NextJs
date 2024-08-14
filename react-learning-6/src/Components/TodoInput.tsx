@@ -3,10 +3,10 @@
 import { useState } from "react";
 
 type TodoInputType = {
-  addNewTodo: (newTodo: string) => void;
+  addNewTodos: (newTodo: string) => void;
 };
 
-const TodoInput = ({ addNewTodo }: TodoInputType) => {
+const TodoInput = ({ addNewTodos }: TodoInputType) => {
   const [newTodo, setNewTodo] = useState("");
 
   return (
@@ -16,11 +16,13 @@ const TodoInput = ({ addNewTodo }: TodoInputType) => {
         type="text"
         id="new-todo"
         value={newTodo}
-        onChange={(e) => setNewTodo(e.target.value)}
+        onChange={(e) => {
+          setNewTodo(e.target.value);
+        }}
       />
       <button
         onClick={() => {
-          addNewTodo(newTodo);
+          addNewTodos(newTodo);
           setNewTodo("")
         }}
       >

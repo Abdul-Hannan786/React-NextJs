@@ -1,16 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TodoInput from "./Components/TodoInput";
-import TodoList from "./Components/TodoList";
-import TodoEdit from "./Components/TodoEdit";
+
+import TodoInput from "@/Components/TodoInput";
+import TodoList from "@/Components/TodoList";
+import TodoEdit from "@/Components/TodoEdit";
 
 export default function Home() {
   const [todos, setTodos] = useState<string[]>([]);
 
   const [editIndex, setEditIndex] = useState(-1);
 
-  const addNewTodo = (newTodo: string) => {
+  const addNewTodos = (newTodo: string) => {
     setTodos([...todos, newTodo]);
   };
 
@@ -21,8 +22,7 @@ export default function Home() {
   };
 
   const saveEditedTodo = (updatedTodo: string) => {
-    console.log(updatedTodo);
-    let cloneTodos = [...todos]
+    let cloneTodos = [...todos];
     cloneTodos.splice(editIndex, 1, updatedTodo)
     setTodos([...cloneTodos])
     setEditIndex(-1)
@@ -35,11 +35,13 @@ export default function Home() {
   return (
     <>
       {editIndex === -1 ? (
-        <TodoInput addNewTodo={addNewTodo} />
+        <TodoInput addNewTodos={addNewTodos} />
       ) : (
-        <TodoEdit saveEditedTodo={saveEditedTodo} editedTodo={todos[editIndex]}/>
+        <TodoEdit
+          editedTodo={todos[editIndex]}
+          saveEditedTodo={saveEditedTodo}
+        />
       )}
-
       <TodoList
         todos={todos}
         deleteTodo={deleteTodo}
