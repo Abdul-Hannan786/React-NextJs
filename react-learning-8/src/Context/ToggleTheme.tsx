@@ -1,24 +1,26 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import { createContext, ReactPortal, useContext, useState } from "react";
 
-const TglThemeContext = createContext({});
+const TgleThmContext = createContext();
 
-const ToggleTheme = ({ children }: { children: React.ReactNode }) => {
+export default function ToggleThmeContext(
+    { children }: { children: React.ReactNode }
+) {
 
-    const [isDarkTheme, setIsDarkTheme] = useState(true)
+    const [isDarkTheme, setIsDarkTheme] = useState(true);
 
     const toggleTheme = () => {
-        setIsDarkTheme(!isDarkTheme)
+        setIsDarkTheme(!isDarkTheme);
     }
 
-  return (
-    <TglThemeContext.Provider value={{isDarkTheme, toggleTheme}}>
-        {children}
-    </TglThemeContext.Provider>
-  )
-};
+    return (
+        <TgleThmContext.Provider value={{ isDarkTheme, toggleTheme }}>
+            {children}
+        </TgleThmContext.Provider>
+    )
 
-export default ToggleTheme;
+}
 
-export const ThemeContext = () => useContext(TglThemeContext)
+
+export const ThemeContext = () => useContext(TgleThmContext);

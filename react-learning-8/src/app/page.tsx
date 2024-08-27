@@ -1,31 +1,24 @@
 "use client";
 
-import { ThemeContext } from "@/Context/ToggleTheme";
+import Image from "next/image";
+import styles from "./page.module.css";
+import { ThemeContext } from "@/context/toggletheme";
 import Link from "next/link";
 
 export default function Home() {
   const { isDarkTheme, toggleTheme } = ThemeContext();
 
   return (
-    <div
+    <section
+      className={styles.main}
       style={{
         backgroundColor: isDarkTheme ? "black" : "white",
         color: isDarkTheme ? "white" : "black",
       }}
     >
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <Link href={"./login"}>Login</Link>
-      <br />
-      <br />
       <button onClick={toggleTheme}>Change Theme</button>
-    </div>
+      <Link href={"/login"}>Login</Link>
+      <Link href={"/login"}>Login</Link>
+    </section>
   );
 }
